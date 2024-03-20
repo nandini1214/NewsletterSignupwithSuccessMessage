@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+<link rel="stylesheet" href="style.css">
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+  <!-- Sign-up form start
+
+  Stay updated!
+
+  Join 60,000+ product managers receiving monthly updates on:
+
+  Product discovery and building what matters
+  Measuring to ensure updates are a success
+  And much more!
+
+  Email address
+  email@company.com
+
+  Subscribe to monthly newsletter
+
+    Sign-up form end -->
+
+  <!-- Success message start
+    
+  Thanks for subscribing!
+
+  A confirmation email has been sent to ash@loremcompany.com. 
+  Please open it and click the button inside to confirm your subscription.
+
+  Dismiss message
+
+    Success message end -->
+    <main>
+      <section class="form container">
+        <div class="form_content">
+          <div class="signup">
+            <h2>Stay updated!</h2>
+            <p>Join 60,000+ product managers receiving monthly updates on:</p>
+            <ul>
+              <li>
+                <img src="./assets/images/icon-list.svg" alt="check" />
+                Product discovery and building what matters
+              </li>
+              <li>
+                <img src="./assets/images/icon-list.svg" alt="check" />
+                Measuring to ensure updates are a success
+              </li>
+              <li>
+                <img src="./assets/images/icon-list.svg" alt="check" />
+                And much more!
+              </li>
+            </ul>
+            <form action="" class="email_address">
+              <div class="label">
+                <label for="email">Email address</label>
+                <label id="email-error"></label>
+              </div>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="email@company.com"
+                required
+                />
+                <button class="active" type="button" id="submit">Subscribe to monthly newsletter</button>
+            </form>
+          </div>
+          <div class="image">
+            <img src="./assets/images/illustration-sign-up-desktop.svg" alt="" />
+          </div>
+        </div>
+        
+      </section>
+      <section class="success container">
+        <div class="success_content">
+          <img src="./assets/images/icon-success.svg" alt="">
+           <h2>Thanks for subscribing!</h2>
+           <p>A confirmation email has been sent to <b>ash@loremcompany.com.</b> 
+            Please open it and click the button inside to confirm your subscription.</p>
+            <button class="active" type="button" id="dismiss">Dismiss message</button>
+        </div>
+           
+      </section>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+    <script>
+        const submit  = document.querySelector("#submit")
+        const form = document.querySelector(".form")
+        const success = document.querySelector(".success")
+        const dismiss = document.querySelector("#dismiss")
+    
+
+const emailInput = document.getElementById("email");
+const emailError = document.getElementById("email-error");
+ function style(){
+    emailInput.style.backgroundColor = 'rgb(255,0,0,.1)';
+    emailInput.style.borderColor = 'rgb(255,0,0,.5)'
+ }
+emailInput.addEventListener("blur", function() {
+  if (emailInput.value === "") {
+     style()
+    emailError.textContent = "This field is required.";
+  } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailInput.value)) {
+    emailError.textContent = "valid email required";
+    style()
+  } else {
+    emailError.textContent = "";
+    submit.addEventListener('click',()=>{
+          form.style.display= 'none';
+          success.style.display = 'flex'
+        })
+        dismiss.addEventListener('click',()=>{
+          form.style.display = 'flex';
+          success.style.display = 'none'
+        }) // Clear error message if valid
+  }
+});
+    </script>
+  </body>
+</html>
