@@ -145,7 +145,7 @@ body{
     background-color: var(--White);
     
    }
-   .image img{
+   .image{
     display: none;
    }
  .form_content{
