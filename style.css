@@ -30,7 +30,7 @@ body{
     
 }
 .form_content{
-    max-width: 55%;
+    max-width: 100%;
     background-color: var(--White);
     display: flex;
     align-items: center;
@@ -139,4 +139,40 @@ body{
 .active:hover{
     background: linear-gradient(to right, rgb(235, 3, 123), var(--Tomato));
     box-shadow:-20px 20px 20px 0px #d2b6b6;
+}
+@media only screen and (max-device-width: 480px) {
+   body{
+    background-color: var(--White);
+    
+   }
+   .image img{
+    display: none;
+   }
+ .form_content{
+
+    height: 100vh;
+    align-items: end;
+    padding: 0;
+    background-image: url(./assets/images/illustration-sign-up-mobile.svg) ;
+    background-repeat:no-repeat;
+    background-position-x: center;
+ }
+.success_content{
+    max-width: 100%;
+    
+    
+}
+.success_content img{
+    width: 50px;
+    height: 50px;
+}
+
+#dismiss{
+    position: absolute;
+    bottom: 100px;
+   padding: 10px 90px;
+
+}
+
+
 }
